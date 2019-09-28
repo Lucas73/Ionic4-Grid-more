@@ -1,0 +1,19 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ usuario.nombre }}, {{ usuario.apellidos }}</ion-card-title>
+    <ion-card-subtitle>Edad: {{ usuario.edad }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        Email: {{ usuario.email }}
+      </ion-item>
+      <ion-item>
+        Departamento: {{ usuario.departamento }}
+      </ion-item>
+      <ion-item button color="secondary" (click)="cerrarPopover()">
+        Cerrar
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

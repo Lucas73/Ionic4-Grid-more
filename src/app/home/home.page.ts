@@ -23,4 +23,13 @@ export class HomePage {
       this.listaUsuarios.push(data.data);
     }
   }
+  async crearPopover(e: any){
+    const popover = await this.popoverController.create({
+      component: PopoverController,
+      translucent: true,
+      event: e,
+      componentProps: {value: e},
+    });
+    return await popover.present();
+  }
 }
