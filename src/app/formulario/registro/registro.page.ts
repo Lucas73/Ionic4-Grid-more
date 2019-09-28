@@ -26,5 +26,10 @@ export class RegistroPage implements OnInit {
   cerrarModal(){
     this.modalCtrl.dismiss()
   }
+  enviarMensaje(){
+    let datosFormulario = this.miFormulario.value;
+    console.log("Datos del formulario", datosFormulario);
+    this.modalCtrl.dismiss(datosFormulario);
+  }
 
 }

@@ -1,14 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Registrador de usuarios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Lista de usuarios</ion-label>
+    </ion-list-header>
+    <ion-row *ngFor= "let usu of listaUsuarios">
+      <ion-col size="3" align-self-end>
+        <ion-avatar>
+          <img src="http://i.pravatar.cc/100">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          {{ usu.apellido }}, {{ usu.nombre }}
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  <ion-button (click)="abrirModal()">Formulario de registro</ion-button>
 </ion-content>

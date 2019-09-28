@@ -1,9 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>registro</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Formulario de registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <form [formGroup]="miFormulario">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="nombre" type="text" placeholder="Introduzca su nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Apellidos:</ion-label>
+        <ion-input formControlName="apellidos" type="text" placeholder="Introduzca su apellido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Correo electrónico:</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Introduzca su email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Contraseña:</ion-label>
+        <ion-input formControlName="contraseña" type="password" placeholder="Introduzca su contraseña"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Edad:</ion-label>
+        <ion-input formControlName="edad" type="number" placeholder="Introduzca su edad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Departamento</ion-label>
+        <ion-input formControlName="departamento" type="text" placeholder="Introduzca el departamento"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" [disabled]="miFormulario.invalid" color="success" (click)="enviarMensaje()">Aceptar</ion-button>
+    <ion-button fill="outline" color="danger" (click)="cerrarModal()">Cancelar</ion-button>
+  </form>
 </ion-content>
