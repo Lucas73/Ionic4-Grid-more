@@ -32,4 +32,14 @@ export class HomePage {
     });
     return await popover.present();
   }
+
+  async deleteUser(usu){
+    this.listaUsuarios = this.listaUsuarios.filter((item)=>{
+      if (item != usu) { return item }
+    })
+  }
+  async editUser(){
+    console.log('no sé cómo editarlo');
+  }
+
 }
